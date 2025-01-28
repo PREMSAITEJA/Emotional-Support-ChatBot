@@ -1,6 +1,6 @@
-# We Support Bot
+# Emotional Support ChatBot
 
-We Support Bot is a mental health support chatbot built with Streamlit and powered by Google's Gemini AI. It provides a compassionate and helpful interface for users seeking emotional support and mental health resources.
+Emotional Support ChatBot is a mental health support chatbot built with Streamlit and powered by Google's Gemini AI. It provides a compassionate and helpful interface for users seeking emotional support and mental health resources.
 
 ## Features
 
