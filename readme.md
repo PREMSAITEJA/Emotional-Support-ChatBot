@@ -14,43 +14,58 @@ Emotional Support ChatBot is a mental health support chatbot built with Streamli
 
 ## Installation
 
-1. Clone the repository:
+1. **Download and Install Python:**
+
+   Ensure you have the last Python version  installed. If not, download and install it from Python's official website. For detailed instructions, refer to the tutorials:
+
+   - [How to Install Python on Windows](https://www.geeksforgeeks.org/how-to-install-python-on-windows/)
+   - [How to Install Python on Linux](https://www.geeksforgeeks.org/how-to-install-python-on-linux/)
+   - [How to Download and Install Python on macOS](https://www.geeksforgeeks.org/how-to-download-and-install-python-latest-version-on-macos-mac-os-x/)
+
+1.a) **Download and Install Google Chrome:**
+   - Download and install the latest version of Google Chrome from its default location on the [official website](https://www.google.com/chrome).
+
+2. Clone the repository:
 
    ```
    git clone https://github.com/PREMSAITEJA/Emotional-Support-ChatBot.git
 
    cd Emotional-Support-ChatBot
    ```
-2. Create a Virtual Environment and Activate it:
 
+
+3. **Activate virtual environment:**
+
+   For Unix-based machines -
+   ```bash
+   python3 -m venv virtual
    ```
-   python -m venv myenv
-`
-   Windows:
-```
-   myenv\Scripts\activate && source myenv/Scripts/activate
 
-```
-   Linux /MacOs/ githubCodespaces:
-```
-   source myenv/bin/activate
-```
-   
-
-
-3. Install the required dependencies:
-
+   ```bash
+   source virtual/bin/activate
    ```
+
+   or for Windows-based machines -
+
+   ```bash
+   .\virtual\Scripts\activate
+   ```
+
+4. **Install the required packages:**
+
+   Before installing the required packages, make sure to install https://visualstudio.microsoft.com/visual-cpp-build-tools/ and select "Desktop development with C++".
+
+   ```bash
    pip install -r requirements.txt
    ```
 
-4. Download the spaCy model:
+5. Download the spaCy model:
 
    ```
    python -m spacy download en_core_web_sm
    ```
 
-5. Set up your Google Gemini API key:
+6. Set up your Google Gemini API key:
    - Sign up for a Google Cloud account and obtain an API key for the Gemini API.
    - You'll be prompted to enter this key when running the application.
 
