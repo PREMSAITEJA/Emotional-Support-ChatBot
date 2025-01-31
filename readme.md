@@ -21,20 +21,36 @@ Emotional Support ChatBot is a mental health support chatbot built with Streamli
 
    cd Emotional-Support-ChatBot
    ```
+2. Create a Virtual Environment and Activate it:
 
-2. Install the required dependencies:
+   ```
+   python -m venv myenv
+`
+   Windows:
+```
+   myenv\Scripts\activate && source myenv/Scripts/activate
+
+```
+   Linux /MacOs/ githubCodespaces:
+```
+   source myenv/bin/activate
+```
+   
+
+
+3. Install the required dependencies:
 
    ```
    pip install -r requirements.txt
    ```
 
-3. Download the spaCy model:
+4. Download the spaCy model:
 
    ```
    python -m spacy download en_core_web_sm
    ```
 
-4. Set up your Google Gemini API key:
+5. Set up your Google Gemini API key:
    - Sign up for a Google Cloud account and obtain an API key for the Gemini API.
    - You'll be prompted to enter this key when running the application.
 
