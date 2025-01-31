@@ -16,14 +16,15 @@ Emotional Support ChatBot is a mental health support chatbot built with Streamli
 
 1. **Download and Install Python:**
 
-   Ensure you have the last Python version  installed. If not, download and install it from Python's official website. For detailed instructions, refer to the tutorials:
+   Ensure you have the last Python version installed. If not, download and install it from Python's official website. For detailed instructions, refer to the tutorials:
 
    - [How to Install Python on Windows](https://www.geeksforgeeks.org/how-to-install-python-on-windows/)
    - [How to Install Python on Linux](https://www.geeksforgeeks.org/how-to-install-python-on-linux/)
    - [How to Download and Install Python on macOS](https://www.geeksforgeeks.org/how-to-download-and-install-python-latest-version-on-macos-mac-os-x/)
 
 1.a) **Download and Install Google Chrome:**
-   - Download and install the latest version of Google Chrome from its default location on the [official website](https://www.google.com/chrome).
+
+- Download and install the latest version of Google Chrome from its default location on the [official website](https://www.google.com/chrome).
 
 2. Clone the repository:
 
@@ -33,10 +34,10 @@ Emotional Support ChatBot is a mental health support chatbot built with Streamli
    cd Emotional-Support-ChatBot
    ```
 
-
 3. **Activate virtual environment:**
 
    For Unix-based machines -
+
    ```bash
    python3 -m venv virtual
    ```
@@ -62,6 +63,8 @@ Emotional Support ChatBot is a mental health support chatbot built with Streamli
 5. Download the spaCy model:
 
    ```
+   pip install --upgrade pip
+   pip install -r requirements.txt
    python -m spacy download en_core_web_sm
    ```
 
