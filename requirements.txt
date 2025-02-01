@@ -4,4 +4,5 @@ google-generativeai==0.5.2
 streamlit-chat==0.1.1
 pandas==1.5.3
 python-dotenv==1.0.0
-numpy==1.24.3
+numpy>=1.25.0
+
