@@ -1,7 +1,13 @@
 import spacy
 from config import SPACY_MODEL, CRISIS_INDICATORS
 
-nlp = spacy.load(SPACY_MODEL)
+def _load_nlp():
+    try:
+        return spacy.load(SPACY_MODEL)
+    except OSError:
+        return spacy.blank("en")
+
+nlp = _load_nlp()
 
 def detect_crisis(user_message: str) -> bool:
     doc = nlp(user_message.lower())

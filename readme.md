@@ -68,9 +68,17 @@ Emotional Support ChatBot is a mental health support chatbot built with Streamli
    python -m spacy download en_core_web_sm
    ```
 
-6. Set up your Google Gemini API key:
+6. Set up your Google Gemini API key as an environment variable:
    - Sign up for a Google Cloud account and obtain an API key for the Gemini API.
-   - You'll be prompted to enter this key when running the application.
+   - Linux/macOS:
+     ```bash
+     export GEMINI_API_KEY="your_api_key_here"
+     ```
+   - Windows (PowerShell):
+     ```powershell
+     setx GEMINI_API_KEY "your_api_key_here"
+     ```
+   - Restart your terminal after setting the variable.
 
 ## Usage
 
@@ -80,4 +88,5 @@ Run the main application:
 streamlit run main.py
 
 ```
+The app reads `GEMINI_API_KEY` from your environment and asks the user for age in the UI.
  From the Above Steps If You Find Any Kind Of Difficulties While Running the Application Use CopilotAI and Try To Contact Me: +91 7382019954 or premsaiteja58@gmail.com

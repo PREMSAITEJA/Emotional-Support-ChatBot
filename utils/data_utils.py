@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+import os
 from datetime import datetime
 from typing import List, Dict
 
@@ -18,8 +19,11 @@ def save_conversation(conversation: List[Dict[str, str]]) -> str:
             f.write(f"{entry['role']}: {entry['content']}\n")
     return filename
 
-def get_api_key():
-    api_key = st.text_input("Enter your Age:")
+def get_gemini_api_key() -> str:
+    api_key = os.getenv("GEMINI_API_KEY") or st.secrets.get("GEMINI_API_KEY", "")
     if not api_key:
-        st.warning("Please enter a valid Age to use the chatbot.")
+        st.error("GEMINI_API_KEY is not set. Please add it as an environment variable.")
     return api_key
+
+def get_user_age() -> int:
+    return int(st.number_input("What is your age?", min_value=1, max_value=120, value=18, step=1))
