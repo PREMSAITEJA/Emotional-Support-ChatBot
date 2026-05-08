@@ -1,7 +1,13 @@
 import spacy
 from config import SPACY_MODEL
 
-nlp = spacy.load(SPACY_MODEL)
+def _load_nlp():
+    try:
+        return spacy.load(SPACY_MODEL)
+    except OSError:
+        return spacy.blank("en")
+
+nlp = _load_nlp()
 
 def analyze_intent(user_message: str) -> str:
     doc = nlp(user_message)
@@ -14,7 +20,7 @@ def analyze_intent(user_message: str) -> str:
     }
     
     for intent, keywords in intent_keywords.items():
-        if any(token.lemma_.lower() in keywords for token in doc):
+        if any((token.lemma_ or token.text).lower() in keywords for token in doc):
             return intent
     
     return "general_support"

@@ -26,4 +26,4 @@ def get_gemini_api_key() -> str:
     return api_key
 
 def get_user_age() -> int:
-    return st.number_input("What is your age?", min_value=1, max_value=120, value=18, step=1)
+    return int(st.number_input("What is your age?", min_value=1, max_value=120, value=18, step=1))
