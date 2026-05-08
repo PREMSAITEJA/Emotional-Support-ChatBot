@@ -2,7 +2,7 @@ import streamlit as st
 import random
 from config import MOOD_OPTIONS
 from utils.nlp_utils import analyze_intent, get_contextual_prompt
-from utils.data_utils import load_country_resources, save_conversation, get_api_key
+from utils.data_utils import load_country_resources, save_conversation, get_gemini_api_key, get_user_age
 from models.dialog_manager import DialogManager
 from services.crisis_detector import detect_crisis, get_crisis_response
 from services.response_generator import generate_response
@@ -51,10 +51,11 @@ def main():
     st.set_page_config(page_title="Emotional support chatbot", page_icon="🤖")
     st.title("Emotional Support Bot")
 
-    api_key = get_api_key()
+    api_key = get_gemini_api_key()
     if not api_key:
         return
 
+    user_age = get_user_age()
     user_name = get_user_name()
     st.write(personalized_greeting(user_name))
 
@@ -99,6 +100,7 @@ def main():
             else:
                 context = dialog_manager.get_context(st.session_state.session_id)
                 context['current_mood'] = current_mood
+                context['user_age'] = user_age
                 response = generate_response(prompt, st.session_state.messages, context, api_key)
 
         st.chat_message("assistant").markdown(response)

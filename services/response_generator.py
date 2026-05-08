@@ -3,7 +3,7 @@ import google.generativeai as genai
 from config import GEMINI_MODEL
 
 def configure_genai(api_key: str):
-    genai.configure(api_key="AIzaSyCG9UkwzjTwqj3IzWM7uMsv200WfIaTYr0")
+    genai.configure(api_key=api_key)
     return genai.GenerativeModel(GEMINI_MODEL)
 
 def generate_response(user_input: str, conversation_history: List[Dict[str, str]], context: Dict[str, Any], api_key: str) -> str:
